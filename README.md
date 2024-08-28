@@ -25,7 +25,7 @@ SOCKS proxy is a simple C program designed to establish a connection to a target
 To run the Toralize program, use the following command:
 
 ```bash
-./toralize <host> <port>
+./app-roxy <host> <port>
 ```
 
 - `<host>`: The target host IP address.
@@ -34,7 +34,7 @@ To run the Toralize program, use the following command:
 ### Example
 
 ```bash
-./toralize 46.227.66.141 80
+./app-roxy 46.227.66.141 80
 ```
 
 This command attempts to connect to the target IP `46.227.66.141` on port `80` through the SOCKS proxy.
@@ -44,15 +44,15 @@ This command attempts to connect to the target IP `46.227.66.141` on port `80` t
 To compile the Toralize program, use the provided `Makefile` or compile manually with GCC:
 
 ```bash
-gcc toralizer.c -o toralizer.so -fPIC -shared -ldl -D_GNU_SOURCE
+gcc app-roxy.c -o toralizer.so -fPIC -shared -ldl -D_GNU_SOURCE
 ```
 
-Ensure all source files (`toralize.c` and `toralize.h`) are in the same directory.
+Ensure all source files (`app-roxy.c` and `config.h`) are in the same directory.
 
 ## File Descriptions
 
-- **toralize.c**: The main source file containing the program logic for sending SOCKS proxy requests and handling responses.
-- **toralize.h**: The header file defining structures and constants used in the program.
+- **app-roxy.c**: The main source file containing the program logic for sending SOCKS proxy requests and handling responses.
+- **config.h**: The header file defining structures and constants used in the program.
 
 ## Troubleshooting
 
@@ -60,7 +60,7 @@ Ensure all source files (`toralize.c` and `toralize.h`) are in the same director
 
 - **Firewall Issues**: Ensure that your firewall settings allow connections to and from the proxy server.
 
-- **Incorrect Proxy Information**: Double-check the proxy settings (`PROXY` and `PROXYPORT` in `toralize.h`) to ensure they are correct.
+- **Incorrect Proxy Information**: Double-check the proxy settings (`PROXY` and `PROXYPORT` in `app-roxy.h`) to ensure they are correct.
 
 ## Contributing
 
